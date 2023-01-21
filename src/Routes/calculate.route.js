@@ -4,7 +4,7 @@ const calculateModel=require("../Model/calculate.model");
 const app=express.Router();
 
 
-app.get("/",async(req,res)=>{
+app.post("/",async(req,res)=>{
     const {annualAmount,annualRate,years} = req.body;
      
     let Total_Maturity=(annualAmount*(((((annualRate/100)+1)**years)-1)/(annualRate/100))).toFixed(0);
